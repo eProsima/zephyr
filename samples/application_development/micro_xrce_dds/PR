@@ -1,0 +1,29 @@
+https://github.com/zephyrproject-rtos/zephyr/pull/17685
+
+
+This RFC issue is targeted towards adding Micro-XRCE-DDS library as a module to zephyr. This repository is available here: https://github.com/eProsima/Micro-XRCE-DDS-Client.
+
+Micro XRCE-DDS is a software solution that allows communicating eXtremely Resource Constrained Environments (XRCEs) with an existing DDS network. This implementation complies with the specification proposal, “DDS for eXtremely Resource Constrained Environments” submitted to the Object Management Group (OMG) consortium. Further information here: https://micro-xrce-dds.readthedocs.io/en/latest/
+
+One of the main purposed for this module integration is enabling Zephyr to be included in the micro-ROS project, the embedded solution of ROS 2 (https://github.com/ros2). Further information about the development of micro-ROS can be found here https://micro-ros.github.io/ and here https://github.com/micro-ROS/micro-ros-build/tree/dashing/micro_ros_setup.
+
+Preferred repository/module name: Micro-XRCE-DDS-Client
+
+------------------------
+
+
+This RFC issue is targeted towards adding Semtech's LoRaMac repo as a module to zephyr. The repository is available here: https://github.com/Lora-net/LoRaMac-node
+
+As per Wikipedia,
+"LoRa (Long Range) is a spread spectrum modulation technique derived from chirp spread spectrum (CSS) technology and is the first low-cost implementation of chirp spread spectrum for commercial usage. It was developed by Cycleo of Grenoble, France, and acquired by Semtech in 2012, a founding member of the LoRa Alliance. LoRa uses license-free sub-gigahertz radio frequency bands like 433 MHz, 868 MHz (Europe) and 915 MHz (North America). LoRa enables long-range transmissions (more than 10 km in rural areas) with low power consumption. The technology is presented in two parts: LoRa, the physical layer and LoRaWAN (Long Range Wide Area Network), the upper layers."
+
+For Zephyr, both LoRa (Point to Point without WAN) and LoRaWAN wireless technologies can be used to support Industrial applications.
+
+As discussed in #17685, we agreed to depend on Semtech's LoRaMac repository for the LoRaWAN stack as well as the Radio drivers in order to avoid code duplication and less maintenance. LoRaMac-Node repository is the reference implementation of the endpoint LoRaWAN stack implementation which perfectly suits to create endpoint nodes powered by Zephyr. This repository is available under Revised BSD License and should not be an issue to depend as a module.
+
+Feature request: #5436
+
+Preferred repository/module name: loramac_node
+
+
+https://github.com/zephyrproject-rtos/zephyr/issues/15278
